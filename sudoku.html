@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Sudoku</title>
+
+	<link rel="stylesheet" type="text/css" href="sudoku.css">
+	<script src="sudoku.js"></script>
+</head>
+<body>
+	<h1 id="title-card">
+		<span id="left-site" title="To the Home Screen!" onclick="window.location.href='index.html'"> <- Home </span>
+		Sudoku
+		<span id="right-site" title="To Program Information!" onclick="window.location.href='info.html'"> Info -> </span>
+	</h1>
+	<hr>
+	
+	<h2 id="errors">Error Chances: 10 </h2>
+	
+	<div id="game">
+		<div id="board"></div>
+
+		<div id="digits"></div>
+	</div>
+	
+	<br>
+
+	<div id="panel">
+		<div id="next-game" class="panel-button light-bg">Next Puzzle</div>
+		<div id="view-mode" class="panel-button light-bg">Switch to Dark</div>
+		<div id="solve-button" class="panel-button light-bg">Solve Board</div>
+		
+	</div>
+</body>
+</html>

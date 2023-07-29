@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="index.js"></script>
+</head>
+<body>
+	<h1 id="title-card">
+		<span id="left-site" title="Go to Information Page!" onclick="window.location.href='info.html'"> <- Info </span>
+		Welcome!
+		<span id="right-site" title = "Go to Sudoku Game!" onclick="window.location.href='sudoku.html'"> Sudoku -> </span>
+	</h1>
+	<hr>
+
+	<div id="intro-panel">
+		<p> Welcome to my final project for CS 351: Website Development for the 2023 Summer Term. </p>
+		<p>Use the top right button to go to a Sudoku game, and the top left for Information on the code</p>
+		<p> Click respective Buttons below for information on pages.</p>
+	</div>
+	<br>
+	<div id="button-panel">
+		<button type="button" class="btn" onclick="infoClick()">Info</button>
+		<button type="button" class="btn" onclick="gameClick()">Sudoku</button>
+	</div>
+	<br>
+	<div id="info-panel">
+
+	</div>
+
+	
+</body>
+</html>

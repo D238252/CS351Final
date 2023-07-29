@@ -1,0 +1,77 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: yellow;
+
+	background: repeating-radial-gradient(#55DD33 30%,#007FFF 70%);
+	background-attachment: fixed;
+
+}
+
+hr{
+	width: 500px;
+
+}
+
+/* Set of ID classifiers for Header and link buttons */
+#title-card{
+	display:flex;
+	justify-content: space-between;
+
+
+}
+#left-site{
+	height: 35px;
+	width: 100px;
+
+	margin: 0 auto;
+	border: 2px solid gray;
+
+	font-size: 20px;
+	align-items: center;
+	background: linear-gradient(to bottom right,#007FFF 50%,#55DD33 50%);
+}
+
+#right-site{
+	height: 35px;
+	width: 100px;
+
+	margin: 0 auto;
+	border: 2px solid gray;
+
+	font-size: 20px;
+	align-items: center;
+	background: linear-gradient(to bottom left,#007FFF 50%,#55DD33 50%);
+}
+
+#intro-panel{
+	
+	width: 400px;
+	font-size: 20px;
+
+	margin: 0 auto;
+	background-color: rgba(0,0,155,0.5);
+
+}
+
+#button-panel{
+
+	display: flex;
+	align-items: space-between;
+}
+
+.btn{
+	height: 40px;
+	width: 80px;
+
+	margin: 0 auto;
+	font-size: 16px;
+}
+
+#info-panel{
+	background-color: rgba(0,50,200,0.5);
+	width: 350px;
+	margin: 0 auto;
+
+	border:	2px solid black;
+}

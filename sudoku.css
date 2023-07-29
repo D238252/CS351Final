@@ -1,0 +1,161 @@
+/* CSS Code for Sudoku window 
+	Starting with general body and hr line*/
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+
+	background-color: #66d3fa;
+}
+
+hr{
+	width: 500px;
+
+}
+
+.light-bg{
+	background-color: #B2FFFF;
+	color: black;
+}
+.dark-bg{
+	background-color: #0039a6;
+	color: #B2FFFF;
+}
+
+/* Set of ID classifiers for Header and link buttons */
+#title-card{
+	display:flex;
+	justify-content: space-between;
+}
+#left-site{
+	height: 35px;
+	width: 100px;
+
+	margin: 0 auto;
+	border: 2px solid gray;
+
+	font-size: 20px;
+	align-items: center;
+
+}
+
+#right-site{
+	height: 35px;
+	width: 100px;
+
+	margin: 0 auto;
+	border: 2px solid gray;
+
+	font-size: 20px;
+	align-items: center;
+}
+
+/* Errors allows classifier..... really only one line */
+#errors{
+	color:coral;
+}
+
+
+/* Set of classifiers for the Game itself: Board and Number Selection */
+#game{
+	display: flex;
+	justify-content: center;
+}
+
+#board{
+	width: 450px;
+	height: 450px;
+
+	margin-right: 30px;
+	
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Note: tile corresponds to game board */
+.tile{
+	width: 48px;
+	height: 48px;
+	border: 1px solid lightgrey;
+
+	font-size: 20px;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#digits{
+	width: 50px;
+	height: 450px;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+/* Note: number corresponds to digit selection */
+.number{
+	width: 44px;
+	height: 44px;
+	border-radius: 20%;
+	border: 1px solid black;
+	margin: 2px;
+
+	font-size: 20px;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Set of Classifiers for the under panel: Next game, light vs dark mode, solve, and enter own board*/
+#panel{
+	width: 500px;
+	height: 50px;
+
+	
+
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	justify-content: space-around;
+}
+
+.panel-button{
+	width: 80px;
+	height: 50px;
+
+	display:flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 20%;
+	border: 1px solid black;
+	margin: 2px;
+
+}
+
+/* CSS classes used by Script for gameplay purposes */
+.number-selected{
+	background-color: rgba(154,205,50,0.5);
+}
+
+.number-finished{
+	background-color: gray;
+}
+
+.tile-start{
+	background-color: rgba(154,205,50,0.5);
+}
+
+.board-victory{
+	background-color: rgba(0,255,0,0.5);
+}
+
+.board-loss{
+	background-color: rgba(255,0,0,0.5);
+}
+.horizontal-line{
+	border-bottom: 1px solid black;
+}
+.vertical-line{
+	border-right: 1px solid black;
+}

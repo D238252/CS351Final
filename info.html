@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Information</title>
+
+	<link rel="stylesheet" type="text/css" href="info.css">
+	<script src="info.js"></script>
+	
+</head>
+<body>
+	<h1 id="title-card">
+		<span id="left-site"onclick="window.location.href='sudoku.html'"> <- Sudoku </span>
+		Information
+		<span id="right-site" onclick="window.location.href='index.html'"> Home -> </span>
+	</h1>
+	<hr>
+
+	<div class="tab">
+		<button class="tabLink" onclick="openTab(event, 'setUp')">Set Up</button>
+		<button class="tabLink" onclick="openTab(event, 'conv')">Conversion</button>
+		<button class="tabLink" onclick="openTab(event, 'gamePlay')">GamePlay</button>
+		<button class="tabLink" onclick="openTab(event, 'solve')">Solve</button>
+		<button class="tabLink" onclick="openTab(event, 'next')">Next Game</button>
+		<button class="tabLink" onclick="openTab(event, 'show')">Show Solution</button>
+		<button class="tabLink" onclick="openTab(event, 'swap')">Swap Mode</button>
+	</div>
+
+	<div id="setUp" class="tabContent tformat">
+		<p>Set up is meant to create the game board for the Sudoku puzzle.</p>
+		<p>The function loops through 1 through 9 to create a div object for the Number buttons and add them to the specified panel.</p>
+		<p>It then performs a nested loop to also create div objects for all the tiles on the game board.</p>
+		<p>From there it will also add the appropriate EventListeners for each button and tile, and call the appropriate function to obtain the solution to the puzzle.</p>
+	</div>
+	<div id="conv" class="tabContent">
+		<p>I'm also using two conversion functions to be able to cleanly interpret the game board and the way the puzzles are represented as variables in the Javascript.</p>
+		<p>The puzzles are held in 81 character strings, so the two functions convert an index of one character(number) to a respective row and column as it would lie on a 9x9 board, and another function to do the opposite.</p>
+	</div>
+	<div id="gamePlay" class="tabContent">
+		<p>The two gameplay functions take up a large number of lines but are fairly straight-forward.</p>
+		<p>The selectNumber() function allows you to pick a number to place. However it will highlight the number selected and all of that number on the game board.</p>
+		<p>The selectTile() does a bit more. It will Identify if the number selected on the board is correct according to the solution. If the number has all 9 of itself on the board, it will deactivate the number button.</p>
+	</div>
+	<div id="solve" class="tabContent">
+		<p>The five functions used to get a solution to the board was the most taxing part of this process. I initially wanted there to be a button to allow a user to input their own puzzles to play, but in order for that to work correctly, the program would need to be able to find a solution to any Sudoku puzzle.</p>
+		<p>The solveBoard() function serves as a wrapper to the solve() function, translating the current game board to an integer array to be passed into the solve()</p>
+		<p>The solve() function is a basic recursive function that will return true if the board works as a solution, and false otherwise. This is slightly optimized by getting a proper index and potential numbers from the optimum() function.</p>
+		<p>The optimum() function searches the entire board for open spaces with the least number of options for a number to be input. This should fill certain gaps faster, and with those gaps filled, there will be less options for other spaces, theoretically shaving time off of finding a solution.</p>
+		<p>The getPossible() function will loop through all 9 numbers for a given tile on the board and determine whether it would be a valid solution for that space. If it is, it will be pushed to an array that will be passed back where it is called, in this case the optimum function.</p>
+		<p>The verifyNum() function is what determines if a number is able to be placed in a specified tile. It loops through the given row and column of an index as well as its current cage to see if the number is already present. If it is present it will return false, otherwise it returns true.</p>
+		<p>Honestly, I hate this solution. I've made way too many Sudoku solvers in other projects and have grown to resent the recursive backtracking method. It feels like a brute force approach, and I initially wanted to implement a solution that would actually solve the puzzles intelligently by looking for spots on the board for a number to go without guessing each available number and going back recursively.</p>
+		<p>Unfortunately, I kept running into bugs and ran out of time. It's a little optimized but still not what I wanted.</p>
+	</div>
+	<div id="next" class="tabContent">
+		<p>The game has 10 pre-set puzzles to play through. Simply the nextGame() function will loop through all the game boards, resetting the game each time. </p>
+	</div>
+	<div id="show" class="tabContent">
+		<p>The showSolution() function is there to show the solution to the puzzle.</p>
+		<p>Honestly this was put in to test to make sure the solve functions were working correctly, and I left it in.</p>
+	</div>
+	<div id="swap" class="tabContent">
+		<p>The swapMode() function changes the color scheme of the page from a "Light Mode" to a "Dark Mode" and vice versa.</p>
+		<p>This function was surprisingly difficult to implement. At first I thought it was a simple case of replacing the respective classes in the CSS code that have the colors changed. This ran into complicated issues where the colors wouldn't arrange properly.</p>
+		<p>The secondary problem became no longer being able to highlight the numbers when the were selected to be input to the board. This was due to the significance levels of style vs. class.</p>
+		<p>I had to change it so that one "empty" CSS class was applicable to all the tiles, numbers, and buttons, and when the swapMode button was clicked, a for loop would go through every item with that class and change the style.</p>
+		<p>I did not like this solution.</p>
+	</div>
+</body>
+</html>
